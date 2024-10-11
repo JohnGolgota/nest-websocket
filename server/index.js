@@ -24,7 +24,8 @@ server.get("/", (req, reply) => {
 });
 
 
-server.ready(() => {
+server.ready(err => {
+  if (err) throw err
   server.io.on("connection", (socket) => {
     console.log("new user")
 
@@ -32,15 +33,13 @@ server.ready(() => {
       socket.broadcast.emit("message", {
         from: socket.id,
         body: message
-      });
-    });
+      })
+    })
 
     socket.on("disconnect", (socket) => {
       console.log("user disconnected")
-    });
-
-  });
-
-});
+    })
+  })
+})
 
 server.listen({ port: PORT })
