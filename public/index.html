@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>nest</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Social network api test</h1>
+		<section>
+			<h2>User</h2>
+			<button id="createUser">Create</button>
+			<button id="getUsers">Get</button>
+			<button id="followUser">Follow</button>
+		</section>
+		<section>
+			<h2>Topics</h2>
+			<button id="createTopic">Create</button>
+			<button id="getTopics">Get</button>
+			<button id="subscribeTopic">Subscribe</button>
+		</section>
+		<section>
+			<h2>Notification</h2>
+			<button id="getNotifications">Get</button>
+			<button id="markNotificationsAsRead">Mark as read</button>
+		</section>
+		<section class="results" id="results"></section>
+	</div>
+	<script src="app.js" type="module"></script>
+</body>
+
+</html>
